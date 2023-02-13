@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+  margin: 10px auto 0;
+  width: 75vw;
+  padding: 10px;
+}
+
+.upscale:hover{
+  size: 1.2;
+}
+
+.recent-social{
+  display: flex;
+}

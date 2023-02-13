@@ -1,0 +1,77 @@
+.write-cont{
+    margin-top: 50px;
+    text-align: left;
+    position: relative;
+}
+.write-cont img{
+    width: 75vw;
+    height: 250px;
+    border-radius:10px;
+    object-fit: cover;
+}
+
+#profile-img{
+    display: none;
+}
+
+.writeform{
+    margin-top: 20px;
+}
+
+.title-cont{
+    display: flex;
+}
+.profile-img-label i{
+    width: 30px;
+    height: 30px;
+    border: 1px solid ;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.title{
+    outline: none;
+    border: none;
+    width: 100%;
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+.title:focus{
+    outline: none;
+}
+
+#Categories{
+    margin-right: 150px;
+    border-radius: 5px;
+    border: none;
+}
+#Categories:focus{
+    outline: none;
+}
+.disc{
+    margin-top: 15px;
+    border: none;
+    font-size: 20px;
+    width: 90%;
+    height: 300px;
+}
+
+.disc:focus{
+    outline: none;
+}
+
+.writesubmit{
+    position: absolute;
+    right: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: teal;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 7px;
+}

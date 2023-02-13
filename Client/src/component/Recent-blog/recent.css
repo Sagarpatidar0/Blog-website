@@ -1,0 +1,54 @@
+#recent{
+    text-align: left;
+    margin-top: 40px;
+    width: 64%;
+    /* font-family: "Montserrat"; */
+}
+.recent-cont{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#recent-blog{
+position: relative;
+margin-bottom: 50px;
+}
+#recent-head{
+    font-weight: 700;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.line{
+    display: inline-block;
+    border: 1px solid rgb(201, 188, 188);
+    margin-bottom: 5px;
+    margin-left: 10px;
+    width: 82%;
+    height: 0px;
+}
+
+.recent-img{
+    width: 360px;
+    overflow: hidden;
+}
+.recent-img img{
+    width: 100%;
+    transition: all 1s;
+}
+.recent-img img:hover{
+    scale: 1.2;
+}
+
+.recent-text{
+    background: white;
+    color: black;
+    width: 320px;
+    bottom: -48px;
+    padding: 10px 20px;
+    line-height: 1.5;
+}
+
+.recent-text .tag{
+    font-size: 1vw;
+}

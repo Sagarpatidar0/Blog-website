@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap');
+
+/* font-family: 'Oswald', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+.login-cont{
+    width: 20%;
+    margin: 140px auto;
+    
+    /* background:  rgb(236, 227, 227); */
+}
+.login-cont h1{
+    border-bottom: 2.5px solid RGB(238, 67, 102);
+    width: fit-content;
+    margin: auto;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.login-form label{
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    padding: 10px 0 0;
+}
+
+.login-form input{
+    padding: 10px;
+    font-size: 18px;
+}
+
+.login-form button{
+ font-size: 20px;
+ margin-top: 10px;
+ padding: 10px;
+ border-radius: 7px;
+ color: white;
+ background: RGB(238, 67, 102);
+ border: 2px solid RGB(238, 67, 102);
+ cursor: pointer;
+}
+.login-form button:disabled{
+    cursor: not-allowed;
+}
+
+.login-form button:hover{
+ background-color: white;
+ font-weight: 600;
+ color: RGB(238, 67, 102);
+}
+
+.test{
+    color-interpolation-filters: auto;
+}
+
+/*  */

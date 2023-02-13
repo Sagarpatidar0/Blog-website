@@ -1,0 +1,46 @@
+.social-media{
+    width: 35%;
+    margin: 0px 0 0 20px;
+}
+.social-media .line{
+    width: 63%;
+}
+h3{
+    text-align: left;
+}
+.media{
+    display: flex;
+    height: 140px;
+    justify-content: space-between;
+    
+
+}
+
+.media i {
+    font-size: 30px;
+}
+.icon{
+    padding: 25px;
+    color: white;
+}
+.icon p{
+    line-height: .5;
+}
+.fb{
+    background: RGB(34, 90, 153);
+    width: 100%;
+}
+.tw{
+    width: 100%;
+    background: RGB(0, 172, 243);
+}
+.gp{
+    width: 100%;
+    background: RGB(220, 77, 45);
+}
+
+.categorie{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(204, 189, 189);
+}
