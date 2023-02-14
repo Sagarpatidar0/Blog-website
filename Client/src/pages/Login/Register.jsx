@@ -1,12 +1,14 @@
 import './login.css'
 import Header from '../../component/Navbar/Header';
 import { Link } from 'react-router-dom'
-import { useContext, useRef } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
+import { BiErrorCircle } from 'react-icons/bi';
+
 
 export default function Register() {
-
+  const [err, setErr] = useState("")
   const userRef = useRef()
   const passRef = useRef()
   const emailRef = useRef()
@@ -28,6 +30,13 @@ export default function Register() {
           console.log(response.data)
           dispatch({ type: "LOGIN_SUCCESS", payload: response.data });
         } catch (error) {
+          if (error.response.data?.keyPattern?.email){
+            setErr("Email already in use");
+          }else if(error.response.data?.keyPattern?.username){
+            setErr("Username already in use");
+          }else{
+            setErr(error.response?.data?.errors?.password?.message)
+          }
           console.log(error);
         }
     }}
@@ -48,6 +57,7 @@ export default function Register() {
           <input type="password" placeholder='Enter your password...' ref={passRef} />
           <button type="submit">Register</button>
           <Link to={"/login"}>Login</Link>
+          {err ? <div className="error"><BiErrorCircle />{err}</div> : ""}
         </form>
       </div>
     </>

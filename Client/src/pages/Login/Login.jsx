@@ -1,17 +1,21 @@
 import './login.css'
 import Header from '../../component/Navbar/Header';
 import { Link } from 'react-router-dom';
-import { useContext, useRef } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
+import { BiErrorCircle } from 'react-icons/bi';
+
 
 export default function Login() {
+    const [err, setErr] = useState("")
     const userRef = useRef()
     const passRef = useRef()
     const { user, dispatch, isFetching } = useContext(AuthContext)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setErr(null)
         dispatch({ type: "LOGIN_START" })
         try {
             const res = await axios.post("http://localhost:5000/api/login", {
@@ -19,12 +23,11 @@ export default function Login() {
                 password: passRef.current.value,
             })
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
-
         } catch (err) {
             dispatch({ type: "LOGIN_FAILURE" });
+            setErr(err.response.data);
         }
     }
-    console.log(user);
     return (
         <>
             <Header />
@@ -39,6 +42,7 @@ export default function Login() {
 
                     <button type="submit" disabled={isFetching}>{"Login"}</button>
                     <Link to={"/register"}>Register</Link>
+                    {err ? <div className="error"><BiErrorCircle />{err}</div> : ""}
                 </form>
             </div>
         </>

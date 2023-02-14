@@ -4,16 +4,18 @@ const Userschema = mongoose.Schema({
     username:{
         type:String,
         required:true,
-        unique:true,
+        unique:[true, 'Username must be unique.'],
     },
     email:{
         type:String,
         required:true,
-        unique:true
+        unique: [true, 'Email must be unique.'],
+        lowercase: true
     },
     password:{
-        type:String,
-        required:true,
+        type: String,
+        required: [true, 'Password is required.'],
+        minlength: [8, 'Password must have at least 8 characters.']
     },
     profile_pic:{
         type:String,

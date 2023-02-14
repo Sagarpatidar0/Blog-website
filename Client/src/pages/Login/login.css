@@ -51,6 +51,9 @@ font-family: 'Roboto', sans-serif; */
  color: RGB(238, 67, 102);
 }
 
+.error{
+    color: red;
+}
 .test{
     color-interpolation-filters: auto;
 }
