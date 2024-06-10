@@ -49,6 +49,7 @@
 }
 
 .form-group input {
+    width: 30%;
     margin-top: 10px;
     font-size: 16px;
     border: none;

@@ -7,11 +7,11 @@ import axios from 'axios'
 
 function Recent() {
     const [posts , setPost] = useState([]);
-    const PF = "http://localhost:5000/uploads/";
+    const PF = "http://m1machine.centralindia.cloudapp.azure.com:5000/uploads/";
 
     useEffect(()=>{
         const getdata = async()=>{
-            const fatchdata = await axios.get("http://localhost:5000/api")
+            const fatchdata = await axios.get("http://m1machine.centralindia.cloudapp.azure.com:5000/api")
             const arrayLength = fatchdata.data.length;
             setPost((fatchdata.data.slice(arrayLength-6,arrayLength)).reverse());
         }

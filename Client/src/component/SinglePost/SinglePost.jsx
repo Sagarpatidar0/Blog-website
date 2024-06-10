@@ -8,11 +8,11 @@ export default function SinglePost() {
     const [post , setPost] = useState([]);
     const location = useLocation();
     const path = (location.pathname.split('/')[2])
-    const PF = "http://localhost:5000/uploads/";
+    const PF = "http://m1machine.centralindia.cloudapp.azure.com:5000/uploads/";
 
     useEffect(()=>{
         const getdata = async ()=>{
-            const fatchdata = await axios.get(`http://localhost:5000/api/${path}`);
+            const fatchdata = await axios.get(`http://m1machine.centralindia.cloudapp.azure.com:5000/api/${path}`);
             setPost(fatchdata.data);
         }
         getdata();

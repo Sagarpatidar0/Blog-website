@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
+import Text from './text';
+
 
 export default function Write() {
     const { user } = useContext(AuthContext);
@@ -13,8 +15,12 @@ export default function Write() {
     const [cat, setCat] = useState([]);
     let res;
 
+   
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+
         const data = {
             title: title,
             disc: disc,
@@ -28,18 +34,19 @@ export default function Write() {
             formdata.append('file', file);
             formdata.append('name', filename);
             try {
-                const imgpath = await axios.post('http://localhost:5000/api/upload', formdata);
+                const imgpath = await axios.post('http://m1machine.centralindia.cloudapp.azure.com:5000/api/upload', formdata);
                 data.img = imgpath.data;
             } catch (e) {
                 console.log(e);
             }
         }
         try {
-            res = await axios.post('http://localhost:5000/api/post', data);
+            res = await axios.post('http://m1machine.centralindia.cloudapp.azure.com:5000/api/post', data);
             window.location.replace(`/post/${res.data._id}`);
         } catch (err) {
             console.log(err);
         }
+
     }
     return (
         <div className='write-cont'>
@@ -69,6 +76,7 @@ export default function Write() {
                 <textarea name="disc" value={disc} onChange={(e) => setDisc(e.target.value)} className='disc' placeholder="Blog Contant ...."></textarea>
                 <input type="submit" value="Publish" className='writesubmit' />
             </form>
+            <Text/>
         </div>
     )
 }

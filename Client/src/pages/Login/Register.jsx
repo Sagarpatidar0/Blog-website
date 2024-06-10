@@ -26,7 +26,7 @@ export default function Register() {
           profile_pic:"1674817820292wallpaperflare.com_wallpaper (2).jpg"
         }
         try {
-          const response =  await axios.post("http://localhost:5000/api/register",data)
+          const response =  await axios.post("http://m1machine.centralindia.cloudapp.azure.com:5000/api/register",data)
           console.log(response.data)
           dispatch({ type: "LOGIN_SUCCESS", payload: response.data });
         } catch (error) {

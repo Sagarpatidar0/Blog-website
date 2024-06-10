@@ -1,7 +1,5 @@
 import './setting.css';
 import Header from '../../component/Navbar/Header'
-import Socialmedia from '../../component/SOCIAL-MEDIA/Socialmedia'
-import p1 from '../../img/p1.png'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
@@ -14,7 +12,7 @@ export default function Setting() {
     const [email, setEmail] = useState(user.email);
     const [password, setPassword] = useState(user.password);
     const [file, setFile] = useState(null);
-    const PF = "http://localhost:5000/uploads/";
+    const PF = "http://m1machine.centralindia.cloudapp.azure.com:5000/uploads/";
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -31,14 +29,14 @@ export default function Setting() {
             formdata.append('file', file);
             formdata.append('name', filename);
             try {
-                const imgpath = await axios.post('http://localhost:5000/api/upload', formdata);
+                const imgpath = await axios.post('http://m1machine.centralindia.cloudapp.azure.com:5000/api/upload', formdata);
                 data.profile_pic = imgpath.data;
             }catch (e) {
                 console.log(e);
             }
         }
         try {
-            const res = await axios.put("http://localhost:5000/api/user/" + user._id, data);
+            const res = await axios.put("http://m1machine.centralindia.cloudapp.azure.com:5000/api/user/" + user._id, data);
             dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
             window.location.reload();
         } catch (err) {
@@ -52,7 +50,7 @@ export default function Setting() {
         const user_name = prompt("Are you sure you want to delete\nEnter your Username");
         if (user_name === user.username) {
             try {
-                await axios.delete("http://localhost:5000/api/user/" + user._id);
+                await axios.delete("http://m1machine.centralindia.cloudapp.azure.com:5000/api/user/" + user._id);
                 dispatch({ type: "LOGOUT" });
             }
             catch (err) {
@@ -95,7 +93,6 @@ export default function Setting() {
                     </form>
                     <div />
                 </div>
-                <Socialmedia />
             </div>
         </div>
     )

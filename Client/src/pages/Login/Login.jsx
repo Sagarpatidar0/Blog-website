@@ -18,7 +18,7 @@ export default function Login() {
         setErr(null)
         dispatch({ type: "LOGIN_START" })
         try {
-            const res = await axios.post("http://localhost:5000/api/login", {
+            const res = await axios.post("http://m1machine.centralindia.cloudapp.azure.com:5000/api/login", {
                 username: userRef.current.value.toLowerCase(),
                 password: passRef.current.value,
             })
