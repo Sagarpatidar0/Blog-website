@@ -7,7 +7,7 @@ import { AuthContext } from '../../context/AuthContext';
 function Header() {
     const [showDropdown, setShowDropdown] = useState(false);
     const {user, dispatch}= useContext(AuthContext);
-    const PF = "http://localhost:5000/uploads/";
+    const PF = "http://m1machine.centralindia.cloudapp.azure.com:5000/uploads/";
 
     const handleclick = (e) => {
         e.preventDefault()
