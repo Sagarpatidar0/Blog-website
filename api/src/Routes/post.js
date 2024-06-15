@@ -96,4 +96,15 @@ router.delete("/:id", async (req, res) => {
     }
 })
 
+// post by category
+router.get("/cat/:cat", async (req, res) => {
+    const category = req.params.cat;
+    try {
+        const post = await Post.find({ cat: { $in: [category] }});
+        res.status(200).json(post);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
 module.exports = router;
