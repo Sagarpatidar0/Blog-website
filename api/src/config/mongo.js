@@ -4,7 +4,7 @@ const env = require("dotenv");
 
 env.config();
 
-mongoose.connect("mongodb://localhost:27017/",
+mongoose.connect(process.env.MONG0_URL,
     {
         dbName: "blogapi",
         useNewUrlParser: true,
